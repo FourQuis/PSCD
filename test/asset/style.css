@@ -3,6 +3,32 @@
 	margin: 0;
 	box-sizing: border-box;
  }
+ hr {
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: calc(-.5*1.5rem);
+    margin-left: calc(-.5*1.5rem);
+}
+.row .col-lg-3 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+.col-md-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%
+}
+.col-md-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%
+}
  body {
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: 1rem;
@@ -11,12 +37,24 @@
     color:#212529 ;
  }
  .mx-auto {
-    margin-right: auto!important;
-    margin-left: auto!important;
+    margin-right: auto   ;
+    margin-left: auto   ;
 }
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+svg {
+    vertical-align: middle;
+}
+.fw-normal {
+    font-weight: 400   ;
+}
+.lh-1 {
+    line-height: 1    ;
+}
+.text-muted {
+    color: #6c757d   ;
 }
  nav {
     display: block;
@@ -28,16 +66,16 @@
     display: block;
  }
 .mb-md-0 {
-    margin-bottom: 0!important;
+    margin-bottom: 0   ;
 }
 .mb-2 {
-    margin-bottom: 0.5rem!important;
+    margin-bottom: 0.5rem   ;
 }
 .me-auto {
-    margin-right: auto!important;
+    margin-right: auto   ;
 }
 .me-2 {
-    margin-right: 0.5rem!important;
+    margin-right: 0.5rem   ;
 }
 dl, ol, ul {
     margin-top: 0;
@@ -53,14 +91,19 @@ dl, ol, ul {
     left: 0;
     z-index: 1030;
  }
+ .nav-item>a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    line-height: 40px;
+ }
  .nav-back {
     color: rgba(255,255,255,0.55);
     background-color:rgba(33, 37, 41, 1);
 
  }
  .navbar {
+    display: flex   ; 
     position: relative;
-    display: flex!important; 
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
@@ -70,9 +113,10 @@ dl, ol, ul {
     display: flex;
     flex-direction: row;
     padding-left: 0;
+    margin-top: 0;
     margin-bottom: 0;
     list-style: none;
-
+    line-height: 40px;
  }
  .navbar-expand-md .navbar-nav .nav-link {
     padding-left:0.5rem ;
@@ -101,17 +145,12 @@ dl, ol, ul {
     
 }
 .navbar-collapse {
-    display: flex !important;
+    display: flex    ;
     flex-wrap: nowrap;
     flex-grow: 1;
     align-items: center;
  }
-.nav-item {
-    display: flex;
-    margin-top: 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
+
 .nav-link {
     display: block;
     color: rgba(255, 255, 255, 0.55);
@@ -131,7 +170,7 @@ dl, ol, ul {
  }
  form {
     display: block;
-    margin-top: 0em;
+    margin-top: 0rem;
 }
 .form-control {
     display: block;
@@ -144,9 +183,6 @@ dl, ol, ul {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     border-radius: 0.375rem;
 }
 .btn-search {
@@ -175,8 +211,8 @@ dl, ol, ul {
     margin-bottom: 4rem;
 }
 .carousel-main {
-    height: 32rem;
     position: relative;
+    height: 32rem;
     width: 100%;
     overflow: hidden;
 } 
@@ -185,11 +221,11 @@ dl, ol, ul {
     text-anchor: middle;
 }
 .carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
     position: absolute;
+    bottom: 3rem;
     right: 15%;
     left: 15%;
+    z-index: 10;
     padding-top:1.25rem ;
     padding-bottom: 1.25rem;
     color: #fff;
@@ -228,26 +264,7 @@ dl, ol, ul {
     background-color: #0b5ed7;
     border-color: #0a58ca;
 }
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0;
-    margin-right: calc(-.5*1.5rem);
-    margin-left: calc(-.5*1.5rem);
 
-}
-.col-lg-3 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-}
-.col-md-5 {
-    flex: 0 0 auto;
-    width: 41.66666667%
-}
-.col-md-7 {
-    flex: 0 0 auto;
-    width: 58.33333333%
-}
 .corousel-content .col-lg-3 {
     margin-bottom: 1.5rem;
     text-align: center;
@@ -261,12 +278,7 @@ dl, ol, ul {
 .rounded-circle {
     border-radius: 50% ;
 }
-svg {
-    vertical-align: middle;
-}
-.fw-normal {
-    font-weight: 400!important
-}
+
 .btn-content {
     display: inline-block;
     padding: 0.375rem 0.75rem;
@@ -282,27 +294,20 @@ svg {
     border-radius: 0.375rem;
     background-color: #6c757d;
 }
+.btn-content:hover {
+    color: #fff;
+    background-color:#5c636a;
+    border-color: #565e64;
+}
 .featurette-divider {
     margin: 5rem 0;
-}
-hr {
-    margin: 1rem 0;
-    color: inherit;
-    border: 0;
-    border-top: 1px solid;
-    opacity: .25;
 }
 .featurette-heading {
     margin-top: 7rem;
     letter-spacing: -.05rem;
     font-size: 50px;
 }
-.lh-1 {
-    line-height: 1 !important;
-}
-.text-muted {
-    color: #6c757d!important;
-}
+
 .bd-placeholder-img-lg {
     font-size: 3.5rem;
 }
@@ -311,16 +316,16 @@ p {
     margin-bottom: 1rem;
 }
 .float-end {
-    float: right!important;
+    float: right   ;
 }
-p {
+.container p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
 }
-a {
+.container>a {
     color: #0d6efd;
     text-decoration: underline;
 }
-a:hover {
+.container>a:hover {
     color: #0a58ca;
 }
